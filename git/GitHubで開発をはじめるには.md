@@ -16,5 +16,5 @@
     ```bash
     # 草が生えるようにする
     git config user.email "01233456790+xxx@users.noreply.github.com"
-    git config user.name "Junichi Hashimoto"
+    git config user.name "my name"
     ```
