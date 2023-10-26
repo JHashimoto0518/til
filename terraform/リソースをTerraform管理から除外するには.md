@@ -3,8 +3,7 @@
 stateをローカルで管理している場合。
 
 ```bash
-terraform state list --state ./terra
-form.config-driven-import.tfstate
+terraform state list --state ./terraform.config-driven-import.tfstate
 # aws_s3_bucket.cdktf-test-log-20231024
 ```
 
