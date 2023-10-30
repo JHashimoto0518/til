@@ -23,7 +23,9 @@ terraform state rm \
 ダブルクォーテーションが含まれたリソース名を指定すると、削除に失敗する。
 
 ```bash
-terraform state rm --state ./terraform.config-driven-import.tfstate aws_s3_bucket.bucket["cdktf-test-log-20231024"]
+terraform state rm \
+  --state ./terraform.config-driven-import.tfstate \
+  aws_s3_bucket.bucket["cdktf-test-log-20231024"]
 # ╷
 # │ Error: Index value required
 # │ 
@@ -37,7 +39,9 @@ terraform state rm --state ./terraform.config-driven-import.tfstate aws_s3_bucke
 エスケープすると、成功する。
 
 ```bash
-terraform state rm --state ./terraform.config-driven-import.tfstate aws_s3_bucket.bucket[\"cdktf-test-log-20231024\"]
+terraform state rm \
+  --state ./terraform.config-driven-import.tfstate \
+  aws_s3_bucket.bucket[\"cdktf-test-log-20231024\"]
 # Removed aws_s3_bucket.bucket["cdktf-test-log-20231024"]
 # Successfully removed 1 resource instance(s).
 ```
