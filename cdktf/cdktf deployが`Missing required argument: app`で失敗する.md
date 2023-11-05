@@ -8,7 +8,7 @@ g-20231024"]'
 # Missing required argument: app
 ```
 
-`.ts`ではVariableを宣言していたが、`cdk.tf.json`が更新されていないため、宣言が反映されていなかったため。
+`.ts`ではVariableを宣言していたが、`cdk.tf.json`が更新されていないため、宣言が反映されていなかった。
 
 合成で、エラーは解消された。
 
@@ -18,14 +18,12 @@ cdktf synth
 # Generated Terraform code for the stacks: config-driven-import
 ```
 
-合成後の`cdk.tf.json`。
+合成後の`cdk.tf.json`より抜粋。
 
 ```json:/cdktf.out/stacks/config-driven-import/cdk.tf.json
-...
   "variable": {
     "bucket_names": {
       "type": "list(string)"
     }
   }
-...
 ```
