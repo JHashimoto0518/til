@@ -1,4 +1,4 @@
-# cdktf deployが`Missing required argument: app`で失敗する
+# cdktf deployの`Missing required argument: app`エラーを解決するには
 
 `cdktf deploy`でエラー。
 
