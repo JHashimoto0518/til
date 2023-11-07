@@ -1,4 +1,4 @@
-# 複数リソースを一括インポートする (Input Variable使用)
+# 複数リソースを一括インポートする (input variable)
 
 ```typescript:main.ts
 import { Construct } from "constructs";
