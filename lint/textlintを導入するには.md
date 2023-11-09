@@ -1,5 +1,7 @@
 # textlintを導入するには
 
+https://github.com/textlint/textlint
+
 ```bash
 npm install textlint \
   --save-dev  # 開発環境のみ
