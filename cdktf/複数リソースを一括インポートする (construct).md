@@ -45,7 +45,7 @@ new MyStack(app, "config-driven-import");
 app.synth();
 ```
 
-複数バケットをインポートするplanが出力される。
+複数バケットをインポートする plan が出力される。
 
 ```bash
 cdktf diff

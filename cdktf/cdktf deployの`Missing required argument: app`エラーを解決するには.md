@@ -8,7 +8,7 @@ g-20231024"]'
 # Missing required argument: app
 ```
 
-`.ts`ではVariableを宣言していたが、`cdk.tf.json`が更新されていないため、宣言が反映されていなかった。
+`.ts`では Variable を宣言していたが、`cdk.tf.json`が更新されていないため、宣言が反映されていなかった。
 
 合成で、エラーは解消された。
 

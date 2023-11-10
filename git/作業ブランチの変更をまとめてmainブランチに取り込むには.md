@@ -2,13 +2,13 @@
 
 作業ブランチを`research/bulk-import`とする。
 
-mainに移動する。
+main に移動する。
 
 ```bash
 git switch main
 ```
 
-`--squash`を指定して、mergeする。
+`--squash`を指定して、merge する。
 
 ```bash
 git merge --squash research/bulk-import 
