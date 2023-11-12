@@ -28,7 +28,7 @@ npx textlint --init
 
 ```bash
 npm install textlint-rule-preset-ja-spacing --save-dev
-``
+```
 
 ```json:.textlintrc.json
 {
