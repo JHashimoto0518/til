@@ -54,7 +54,7 @@ Would you like to take it to the playground and see how it performs?
 
 ![Alt text](image.png)
 
-保存します。今回は試用なので `Public`` は避けました。
+保存します。今回は試用なので `Public` は避けました。
 
 ![Alt text](image-1.png)
 
