@@ -50,7 +50,7 @@ The profile picture has been finalized, and the GPT's behavior has been updated 
 Would you like to take it to the playground and see how it performs?
 ```
 
-準備が整うと、試用を勧められました。右側の Preview ペインで試してみます。期待した回答に近い結果は得られているようです。
+準備が整うと、試用を勧められました。右側の Preview ペインで試してみます。期待近い回答は得られているようです。
 
 ![Alt text](image.png)
 
@@ -60,13 +60,15 @@ Would you like to take it to the playground and see how it performs?
 
 では、利用してみます。
 
-通常の ChatGPT (GPT-4) と比べてみます。
+![Alt text](image-6.png)
+
+比較のため、まず、通常の ChatGPT (GPT-4) に聞いてみます。
 
 Amazon Bedrock のような登場したばかりのサービスだと、ChatGPT は回答できません。
 
 ![Alt text](image-3.png)
 
-今回カスタマイズした ChatGPT だと、回答してくれます。
+カスタマイズした ChatGPT だと、公式ドキュメントさえあれば回答してくれます。
 
 ![Alt text](image-2.png)
 
