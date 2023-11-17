@@ -10,7 +10,6 @@ GPTs で AWS ドキュメントを検索する ChatGPT を作成してみまし�
 
 ![Alt text](image-4.png)
 
-
 ```plaintext:GPT Builder
 Hi! I'll help you build a new GPT. You can say something like, "make a creative who helps generate visuals for new products" or "make a software engineer who helps format my code."
 
