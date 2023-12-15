@@ -44,3 +44,6 @@ git add .
 # warning: in the working copy of '...', LF will be replaced by CRLF the next time Git touches it
 ```
 
+## 参考
+
+https://qiita.com/uggds/items/00a1974ec4f115616580
