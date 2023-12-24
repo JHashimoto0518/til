@@ -30,21 +30,15 @@ enum SubscriptionPlan {
     Student
 }
 
-internal class BillingPromotionFeatureEnabledAttribute : EnumEnableAttributeBase {
-    public BillingPromotionFeatureEnabledAttribute(bool enabled) : base(enabled) { }
+internal class BillingPromotionFeatureEnabledAttribute(bool enabled) : EnumEnableAttributeBase(enabled) {
 }
 
-internal class LimitedContentAccessibleAttribute : EnumEnableAttributeBase {
-    public LimitedContentAccessibleAttribute(bool enabled) : base(enabled) { }
+internal class LimitedContentAccessibleAttribute(bool enabled) : EnumEnableAttributeBase(enabled) {
 }
 
 [AttributeUsage(AttributeTargets.Field)]
-abstract internal class EnumEnableAttributeBase : Attribute {
-    public bool Enabled { get; }
-
-    public EnumEnableAttributeBase(bool enabled) {
-        this.Enabled = enabled;
-    }
+abstract internal class EnumEnableAttributeBase(bool enabled) : Attribute {
+    public bool Enabled { get; } = enabled;
 }
 ```
 
