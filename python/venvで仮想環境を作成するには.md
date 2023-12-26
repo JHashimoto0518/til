@@ -22,23 +22,30 @@ python3 -m venv venv
 # Failing command: /home/xxx/venv/bin/python3
 ```
 
-ディレクトリ名 `venv` で、カレントディレクトリ直下に仮想環境を作成する。
+カレントディレクトリ直下に、仮想環境の管理ディレクトリ`venv`を作成する。
 
 ```bash
 python3 -m venv venv
 ```
 
-仮想環境をアクティベートする。
+仮想環境をアクティベートする。この状態で `pip install` すると、仮想環境にインストールされる。
 
 ```bash
  . venv/bin/activate
 # (venv) xxx@DESKTOP-EONL0GM:~/xxx/$ 
 ```
 
-仮想環境を終了する。
+仮想環境から抜ける。
 
-```
+```bash
 deactivate
+# xxx@DESKTOP-EONL0GM:~/xxx/$ 
+```
+
+仮想環境を削除する。
+
+```bash
+rm -rf venv
 ```
 
 ## 参考
@@ -48,4 +55,3 @@ https://docs.python.org/ja/3/library/venv.html
 https://qiita.com/shun_sakamoto/items/7944d0ac4d30edf91fde
 
 https://qiita.com/hrmc/items/264857074b0c26dfeeaf
-
