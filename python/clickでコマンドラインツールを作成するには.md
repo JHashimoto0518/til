@@ -40,20 +40,20 @@ python hello.py --help
 #   --help           Show this message and exit.
 ```
 
-プロンプトを使用して、モジュールを実行する。
+モジュールを実行する。
 
 ```bash
-python hello.py --count 3
-# Your name: jhashimoto
+python hello.py --count 3 --name jhashimoto
 # Hello, jhashimoto!
 # Hello, jhashimoto!
 # Hello, jhashimoto!
 ```
 
-プロンプトを使用しない。
+対話的に実行する。
 
 ```bash
-python hello.py --count 3 --name jhashimoto
+python hello.py --count 3
+# Your name: jhashimoto
 # Hello, jhashimoto!
 # Hello, jhashimoto!
 # Hello, jhashimoto!
