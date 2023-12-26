@@ -48,6 +48,8 @@ deactivate
 rm -rf venv
 ```
 
+ディレクトリを Git で管理する場合は、`venv/` を `.gitignore` に追加する。
+
 ## 参考
 
 https://docs.python.org/ja/3/library/venv.html
