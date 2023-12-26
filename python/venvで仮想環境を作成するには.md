@@ -22,7 +22,7 @@ python3 -m venv venv
 # Failing command: /home/xxx/venv/bin/python3
 ```
 
-`venv` の名前で、仮想環境を作成する。
+ディレクトリ名 `venv` で、カレントディレクトリ直下に仮想環境を作成する。
 
 ```bash
 python3 -m venv venv
