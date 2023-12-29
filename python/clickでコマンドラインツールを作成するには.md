@@ -1,6 +1,11 @@
-# clickでコマンドラインツールを作成するには
+---
+bibliography: 
+    - https://palletsprojects.com/p/click/
+repositoryUrl:
+    - https://github.com/JHashimoto0518/python-exercise/tree/main/click
+---
 
-https://palletsprojects.com/p/click/
+# clickでコマンドラインツールを作成するには
 
 インストールする。
 
