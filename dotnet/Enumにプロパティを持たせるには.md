@@ -1,3 +1,7 @@
+---
+draft: true
+---
+
 # Enumにプロパティを持たせるには
 
 https://tech.uzabase.com/entry/2023/12/03/100712
@@ -86,3 +90,10 @@ static class SubscriptionPlanExtensions {
 if (subscriptionPlan.IsBillingPromotionFeatureEnabled()) {
     ...
 ```
+
+## Todo
+
+リフレクションが遅延の原因になっていないか？
+
+- https://postd.cc/why-is-reflection-slow/
+- https://ufcpp.net/study/csharp/misc_dynamic.html
