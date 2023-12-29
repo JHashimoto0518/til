@@ -1,3 +1,7 @@
+---
+draft: true
+---
+
 # front-matterでメタデータを管理するには
 
 - https://gohugo.io/content-management/front-matter/
