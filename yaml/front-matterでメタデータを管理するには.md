@@ -18,5 +18,6 @@ bibliography:
     - https://...
 repositoryUrl:
     - https://github.com/...
+draft: false
 ---
 ```
