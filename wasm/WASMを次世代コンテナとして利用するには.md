@@ -1,3 +1,9 @@
+---
+bibliography: 
+repositoryUrl:
+draft: true
+---
+
 # WASMを次世代コンテナとして利用するには
 
 コンテナの次としての WASM。
