@@ -9,7 +9,6 @@ draft: false
 
 .NET 開発環境の例。
 
-
 https://github.com/github/dotnet-codespaces
 
 2 ステップで、ブラウザから開発できる環境をブートできる。
