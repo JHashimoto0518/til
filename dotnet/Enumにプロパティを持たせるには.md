@@ -1,5 +1,8 @@
 ---
-draft: true
+bibliography: 
+repositoryUrl:
+    - https://github.com/JHashimoto0518/csharp-exercise/tree/main/props-enum-sample
+draft: false
 ---
 
 # Enumにプロパティを持たせるには
