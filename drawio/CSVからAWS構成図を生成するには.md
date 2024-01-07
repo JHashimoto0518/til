@@ -20,7 +20,7 @@ draw.io で、CSV から AWS の構成図を生成してみた。画像ではな
 
 https://github.com/jgraph/drawio-diagrams/blob/dev/examples/csv/habit-tracker-app-aws.txt
 
-```
+```Text
 ## Habit Tracker app AWS diagram
 # label: %component%
 # style: shape=%shape%;fillColor=%fill%;strokeColor=%stroke%;verticalLabelPosition=bottom;
