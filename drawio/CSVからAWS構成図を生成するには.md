@@ -62,5 +62,4 @@ ALB -> EC2 の例。
 id,component,fill,stroke,shape,refs
 1,ALB,#8C4FFF,#ffffff,mxgraph.aws4.application_load_balancer,
 2,EC2,#ED7100,#ffffff,mxgraph.aws4.ec2,1
-3,VPC,#ED7100,#ffffff,mxgraph.aws4.group,1
 ```
