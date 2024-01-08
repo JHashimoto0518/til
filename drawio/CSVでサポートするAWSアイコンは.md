@@ -16,7 +16,19 @@ DynamoDB であれば、`mxgraph.aws3.dynamodb`, `mxgraph.aws4.dynamodb` のい�
 sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.ec2;
 ```
 
-その他確認したリソース。
+なお、URL指定もできる模様。
+
+https://drawio-app.com/wp-content/uploads/2018/03/drawio-example-csv-import.txt
+
+```Text
+...
+## ---- CSV below this line. First line are column names. ----
+name,position,id,location,manager,email,fill,stroke,refs,url,image
+Evan Miller,CFO,emi,Office 1,,me@example.com,#dae8fc,#6c8ebf,,https://www.draw.io,https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-9-2-128.png
+...
+```
+
+その他、確認したリソース。
 
 公式をフォークしたリポジトリ。大量の AWS アイコン指定がある。
 
