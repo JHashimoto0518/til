@@ -7,7 +7,7 @@ draft: false
 publish: false
 ---
 
-# kmsにキーをインポートするには
+# KMSキーをインポートするには
 
 カスタマーマスターキーを作成する。
 
@@ -109,7 +109,7 @@ openssl rand -out PlaintextKeyMaterial.bin 32
 ダウンロードした公開鍵でキーマテリアルを暗号化する。
 
 ```bash
-# -keyform: 秘密鍵のフォーマット, -pubin: 入力は公開鍵, 
+# -keyform: 秘密鍵のフォーマット, -pubin: 入力は公開鍵
 openssl pkeyutl \
     -encrypt \
     -in PlaintextKeyMaterial.bin \
