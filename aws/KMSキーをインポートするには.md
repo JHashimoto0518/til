@@ -1,7 +1,9 @@
 ---
 bibliography: 
     - https://docs.aws.amazon.com/ja_jp/kms/latest/developerguide/importing-keys.html
-    - https://dev.classmethod.jp/articles/kms-import-key-material/
+    - https://qiita.com/domokun70cm/items/87c637a849332c51e8e0
+    - https://qiita.com/yz2cm/items/17bfed89417d5dbf65e7
+    - https://qiita.com/aminosan000/items/43c8b63dd02aa0552657
 repositoryUrl:
 draft: false
 publish: false
