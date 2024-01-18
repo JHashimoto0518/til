@@ -1,9 +1,7 @@
 ---
 bibliography: 
-    - https://...
 repositoryUrl:
-    - https://github.com/...
-draft: true
+draft: false
 ---
 
 # Terraformをクイックスタートするには
