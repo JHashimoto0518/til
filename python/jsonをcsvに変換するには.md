@@ -1,5 +1,7 @@
 ---
 bibliography: 
+    - https://stackoverflow.com/questions/1871524/how-can-i-convert-json-to-csv
+    - https://blog.enterprisedna.co/python-convert-json-to-csv/
 repositoryUrl:
     - https://github.com/JHashimoto0518/python-exercise/tree/main/json2csv
 draft: false
