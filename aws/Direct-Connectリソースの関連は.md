@@ -16,3 +16,7 @@ AWS クラウドへの物理的な接続を提供する拠点のことを「Dire
 オンプレミスから Direct Connect ロケーションまでを専用線で接続する。この物理接続のことを「接続」と呼ぶ。
 
 物理接続の中に、複数の論理インターフェースを保持できる。これを VIF と呼ぶ。
+
+https://docs.aws.amazon.com/ja_jp/directconnect/latest/UserGuide/add-peer-to-vif.html
+
+VIF に BGP ピアリングを設定し、経路情報をアドバタイズする。
