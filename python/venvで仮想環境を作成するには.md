@@ -31,7 +31,7 @@ python3 -m venv venv
 仮想環境をアクティベートする。この状態で `pip install` すると、仮想環境にインストールされる。
 
 ```bash
- . venv/bin/activate
+. venv/bin/activate
 # (venv) xxx@DESKTOP-EONL0GM:~/xxx/$ 
 ```
 
