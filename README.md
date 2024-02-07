@@ -7,6 +7,7 @@ Today I Learned
 create with template.
 
 ```bash
+article=This-is-a-sample-article
 cat << EOF > "${article}.md"
 ---
 bibliography: 
