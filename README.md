@@ -8,6 +8,9 @@ create with template.
 
 ```bash
 article=This-is-a-sample-article
+```
+
+```bash
 cat << EOF > "${article}.md"
 ---
 bibliography: 
