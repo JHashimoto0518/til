@@ -19,7 +19,6 @@ draft: true
 ---
 
 # ${article}
-
 EOF
 ```
 
