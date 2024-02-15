@@ -9,7 +9,7 @@ draft: false
 Update前のバージョン。
 
 ```bash
-$ python --version
+python --version
 # Python 3.11.5
 ```
 
@@ -18,7 +18,7 @@ $ python --version
 https://www.python.org/downloads/
 
 ```bash
-$ python --version
+python --version
 # Python 3.12.2
 ```
 
@@ -33,7 +33,7 @@ ls -1 /d/Users/xxx/AppData/Local/Programs/Python/
 そのため、パッケージは何もインストールされていない。
 
 ```bash
-$ pip freeze
+pip freeze
 
 ```
 
@@ -41,4 +41,11 @@ $ pip freeze
 
 ```bash
 pip install -r requirements.txt
+```
+
+```bash
+pip freeze
+# boto3==1.26.54
+# botocore==1.29.165
+# ...
 ```
