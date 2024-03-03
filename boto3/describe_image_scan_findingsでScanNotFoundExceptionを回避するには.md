@@ -1,6 +1,7 @@
 ---
 bibliography: 
 repositoryUrl:
+  - https://github.com/JHashimoto0518/python-exercise/blob/main/boto3/nexttoken-sample.py
 draft: true
 ---
 
