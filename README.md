@@ -28,3 +28,10 @@ commit the article.
 git add "${article}.md"
 git commit -m "add: ${article}"
 ```
+
+## update article
+
+```bash
+git add "${article}.md"
+git commit -m "update: ${article}"
+```
