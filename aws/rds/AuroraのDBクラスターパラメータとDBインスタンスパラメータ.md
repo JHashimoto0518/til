@@ -25,8 +25,54 @@ A. 先の Answer より「ない」と思われる
 
 ## Q. クラスターパラメータに存在しないインスタンスパラメータはあるか？
 
-A. 引用より、インスタンスパラメータにはデフォルト値としてクラスターパラメータが存在し、例外はないと思われる。
+A. 引用より、インスタンスパラメータにはデフォルト値としてクラスターパラメータが存在し、例外はないと考えられる。
 
 > すべての Aurora クラスターは、DB クラスターパラメータグループに関連付けられます。このパラメータグループは、対応する DB エンジンの**すべての設定値**にデフォルト値を割り当てます。クラスターパラメータグループには、クラスターレベルとインスタンスレベル両方のパラメータのデフォルトも含まれています。
 >
 > 各 DB インスタンスにも DB パラメータグループが関連付けられます。DB パラメータグループの値によって、クラスターパラメータグループのデフォルト値をオーバーライドできます。
+
+- [ ] Diff を添付する
+  
+クラスターパラメータとインスタンスパラメータの比較結果から裏付けられる。
+
+## Q. パラメータsourceフィールドの意味は？
+
+`source`は、値のソースを示す。
+
+`engine-default`: データベースエンジンのデフォルト値。
+
+例えば、PostgreSQL 13 `autovacuum_vacuum_cost_delay` のデフォルト値は 2 である。
+
+https://www.postgresql.jp/document/13/html/runtime-config-autovacuum.html
+
+`system`: RDS サービスのデフォルト値。コンピューティングクラスおよびインスタンンスの割り当てストレージにより決まる。
+
+`user`: ユーザーがパラメータを変更したことを示す。変更したパラメータをデフォルト値に戻しても、`user`のままなので注意すること。
+
+## 参考
+
+https://stackoverflow.com/questions/46719707/how-to-see-default-mysql-parameter-values-of-aws-mysql-rds-instance-on-aws-conso
+
+https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/UserGuide/parameter-groups-overview.html#parameter-groups-overview.custom
+
+> デフォルトの各パラメータグループには、エンジン、コンピューティングクラス、およびインスタンスの割り当てストレージに基づいた、データベースエンジンのデフォルトと Amazon RDS システムのデフォルトが含まれています。
+
+## 表記の違い
+
+|                    | エンジンのデフォルト | システムのデフォスト | ユーザー   |
+| ------------------------ | -------------------- | -------------------- | ---------- |
+| API Response             | `engine-default`     | `system`             | `user`     |
+| マネージメントコンソール | `Engine default`     | `System default`     | `Modified` |
+
+## Q. パラメータの優先順位は？
+
+https://dev.classmethod.jp/articles/aurora-parameter-group-priority/
+
+|     | クラスターパラメータ | インスタンスパラメータ | 適用されるパラメータ   |
+| --- | -------------------- | ---------------------- | ---------------------- |
+| 1   | デフォルト[^1]           | デフォルト             | -                      |
+| 2   | デフォルト           | `user`                   | インスタンスパラメータ |
+| 3   | `user`                 | デフォルト             | クラスターパラメータ   |
+| 4   | `user`                 | `user`                   | インスタンスパラメータ             |
+
+[^1]: `engine-default`, `system` を「デフォルト」と記載
