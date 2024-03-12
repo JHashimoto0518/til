@@ -59,6 +59,8 @@ https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/UserGuide/parameter-groups-ov
 
 ## 表記の違い
 
+Source の表記の違い。
+
 |                    | エンジンのデフォルト | システムのデフォスト | ユーザー   |
 | ------------------------ | -------------------- | -------------------- | ---------- |
 | API Response             | `engine-default`     | `system`             | `user`     |
@@ -66,13 +68,14 @@ https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/UserGuide/parameter-groups-ov
 
 ## Q. パラメータの優先順位は？
 
-https://dev.classmethod.jp/articles/aurora-parameter-group-priority/
-
-|     | クラスターパラメータ | インスタンスパラメータ | 適用されるパラメータ   |
-| --- | -------------------- | ---------------------- | ---------------------- |
-| 1   | デフォルト[^1]           | デフォルト             | -                      |
-| 2   | デフォルト           | `user`                   | インスタンスパラメータ |
-| 3   | `user`                 | デフォルト             | クラスターパラメータ   |
-| 4   | `user`                 | `user`                   | インスタンスパラメータ             |
+| ケース | クラスターパラメータ | インスタンスパラメータ | 適用されるパラメータ   |
+| ------ | -------------------- | ---------------------- | ---------------------- |
+| 1      | デフォルト[^1]       | パラメータなし         | デフォルト             |
+| 2      | デフォルト           | デフォルト             | デフォルト             |
+| 3      | デフォルト           | `user`                 | インスタンスパラメータ |
+| 4      | `user`               | デフォルト             | クラスターパラメータ   |
+| 5      | `user`               | `user`                 | インスタンスパラメータ |
 
 [^1]: `engine-default`, `system` を「デフォルト」と記載
+
+参考: https://dev.classmethod.jp/articles/aurora-parameter-group-priority/
