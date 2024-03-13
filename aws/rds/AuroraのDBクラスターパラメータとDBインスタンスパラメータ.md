@@ -1,7 +1,7 @@
 ---
 bibliography: 
 repositoryUrl:
-draft: true
+draft: false
 ---
 
 # AuroraのDBクラスターパラメータとDBインスタンスパラメータ
@@ -33,9 +33,21 @@ https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/AuroraUserGuide/USER_WorkingW
 >
 > 各 DB インスタンスにも DB パラメータグループが関連付けられます。DB パラメータグループの値によって、クラスターパラメータグループのデフォルト値をオーバーライドできます。
 
-- [ ] Diff を添付する
-  
-クラスターパラメータとインスタンスパラメータの比較結果から裏付けられる。
+仮説を検証するため、Postgresql13 のクラスターパラメータとインスタンスパラメータを比較し、すべてのインスタンスパラメータにはデフォルト値としてクラスターパラメータが存在することを確認した。
+
+```bash
+# すべてのパラメータをCSV形式で出力する
+aws rds describe-db-cluster-parameters --db-cluster-parameter-group-name default.aurora-postgresql13 | jq -r '.Parameters[] | [.ParameterName, .Description, .Source, .ApplyType, .DataType, .AllowedValues, .IsModifiable] | @csv' > default.aurora-postgresql13-clu.csv
+aws rds describe-db-parameters --db-parameter-group-name default.aurora-postgresql13 | jq -r '.Parameters[] | [.ParameterName, .Description, .Source, .ApplyType, .DataType, .AllowedValues, .IsModifiable] | @csv' > default.aurora-postgresql13-ins.csv
+```
+
+```bash
+# ソートして、インスタンスパラメータにのみ存在する行を出力する
+sort default.aurora-postgresql13-clu.csv > default.aurora-postgresql13-clu-sorted.csv
+sort default.aurora-postgresql13-ins.csv > default.aurora-postgresql13-ins-sorted.csv
+comm -13 default.aurora-postgresql13-clu-sorted.csv default.aurora-postgresql13-ins-sorted.csv
+# 出力なし
+```
 
 ## Q. パラメータsourceフィールドの意味は？
 
@@ -49,7 +61,7 @@ https://www.postgresql.jp/document/13/html/runtime-config-autovacuum.html
 
 `system`: RDS サービスのデフォルト値。コンピューティングクラスおよびインスタンンスの割り当てストレージにより決まる。
 
-`user`: ユーザーがパラメータを変更したことを示す。変更したパラメータをデフォルト値に戻しても、source は `user` のままなので注意すること。
+`user`: ユーザーがパラメータを変更したことを示す。変更したパラメータをデフォルト値に戻しても、source は `user` のままである。つまり、設定値を戻すことはできるが、source は不可逆である。
 
 ### 参考
 
