@@ -25,7 +25,9 @@ A. 先の Answer より「ない」と思われる
 
 ## Q. クラスターパラメータに存在しないインスタンスパラメータはあるか？
 
-A. 引用より、インスタンスパラメータにはデフォルト値としてクラスターパラメータが存在し、例外はないと考えられる。
+A. 引用より、すべてのインスタンスパラメータにはデフォルト値としてクラスターパラメータが存在し、例外はないと考えられる。
+
+https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/AuroraUserGuide/USER_WorkingWithDBClusterParamGroups.html#Aurora.Managing.ParameterGroups
 
 > すべての Aurora クラスターは、DB クラスターパラメータグループに関連付けられます。このパラメータグループは、対応する DB エンジンの**すべての設定値**にデフォルト値を割り当てます。クラスターパラメータグループには、クラスターレベルとインスタンスレベル両方のパラメータのデフォルトも含まれています。
 >
@@ -47,9 +49,9 @@ https://www.postgresql.jp/document/13/html/runtime-config-autovacuum.html
 
 `system`: RDS サービスのデフォルト値。コンピューティングクラスおよびインスタンンスの割り当てストレージにより決まる。
 
-`user`: ユーザーがパラメータを変更したことを示す。変更したパラメータをデフォルト値に戻しても、`user`のままなので注意すること。
+`user`: ユーザーがパラメータを変更したことを示す。変更したパラメータをデフォルト値に戻しても、source は `user` のままなので注意すること。
 
-## 参考
+### 参考
 
 https://stackoverflow.com/questions/46719707/how-to-see-default-mysql-parameter-values-of-aws-mysql-rds-instance-on-aws-conso
 
