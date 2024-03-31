@@ -83,9 +83,9 @@ AWS Pricing Calculator の URL が発行された。
 
 ```bash
 aws cloudformation estimate-template-cost --template-body file://cfn-tmpl.yaml
-{
-    "Url": "https://calculator.aws/#/estimate?id=cloudformation/5ef947ad53045d2f392460ed4f45b037d3080e78"
-}
+# {
+#     "Url": "https://calculator.aws/#/estimate?id=cloudformation/5ef947ad53045d2f392460ed4f45b037d3080e78"
+# }
 ```
 
 なぜか、Estimate は 0 だった。
