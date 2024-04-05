@@ -39,7 +39,7 @@ Count は ScanFilter が適用された値。ScannedCount は ScanFilter を適�
 https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/APIReference/API_TableDescription.html#DDB-Type-TableDescription-ItemCount
 
 > ItemCount
-> 
+>
 > The number of items in the specified table. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.
 
 「指定したテーブル内の項目の数。DynamoDB は、この値をおおよそ 6 時間ごとに更新します。最近の変更は、この値に反映されない可能性があります」
@@ -50,7 +50,7 @@ https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynam
 
 > Note that this uses the same quantity of read capacity units as getting the items, and is subject to the same item size calculations.
 
-「これは、アイテムの取得と同じ量の読み取り容量単位を使用し、同じアイテムサイズの計算の対象となることに注意してください」
+「これは、アイテムの取得と同じ量の読み取りキャパシティーユニットを使用し、同じアイテムサイズの計算の対象となることに注意してください」
 
 ## マネージメントコンソールを利用する
 
