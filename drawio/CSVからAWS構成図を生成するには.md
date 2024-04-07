@@ -63,3 +63,25 @@ id,component,fill,stroke,shape,refs
 1,ALB,#8C4FFF,#ffffff,mxgraph.aws4.application_load_balancer,
 2,EC2,#ED7100,#ffffff,mxgraph.aws4.ec2,1
 ```
+
+VPC を追加した。
+
+```Text
+## Simple web server AWS diagram
+# label: %component%
+# style: shape=%shape%;fillColor=%fill%;strokeColor=%stroke%;verticalLabelPosition=bottom;
+# namespace: csvimport-
+# connect: {"from":"refs", "to":"id", "invert":true, "style":"curved=0;endArrow=none;endFill=0;dashed=1;strokeColor=#6c8ebf;"}
+# width: 80
+# height: 80
+# ignore: id,shape,fill,stroke,refs
+# nodespacing: 40
+# levelspacing: 40
+# edgespacing: 40
+# layout: horizontaltree
+## CSV data starts below this line
+id,component,fill,stroke,shape,refs
+1,ALB,#8C4FFF,#ffffff,mxgraph.aws4.application_load_balancer,
+2,EC2,#ED7100,#ffffff,mxgraph.aws4.ec2,1
+3,VPC,none,#248814,mxgraph.aws4.group,
+```
