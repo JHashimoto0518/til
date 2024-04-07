@@ -12,7 +12,7 @@ draft: false
 
 draw.io で、CSV から AWS の構成図を生成してみた。画像ではなく、オブジェクトとして生成されるので、編集もできる。
 
-![Alt text](./images/diagram-from-csv-1.png)
+![Alt text](./diagram-from-csv/image.png)
 
 具体的には、メニュー `配置 -> 挿入 -> 高度な設定 -> CSV...` で表示されるダイアログに、所定のフォーマットの CSV をペーストし、インポートする。
 
