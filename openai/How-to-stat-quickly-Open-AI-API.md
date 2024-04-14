@@ -22,8 +22,8 @@ https://platform.openai.com/api-keys
 Create a virtual environment, and activate it.
 
 ```bash
-python -m venv openai-env
-. openai-env/bin/activate
+python -m venv env
+. env/bin/activate
 ```
 
 Install openai.
@@ -69,5 +69,5 @@ python3 openai-test.py
 Deactivate virtual environment.
 
 ```bash
- eactivate
+deactivate
 ```
