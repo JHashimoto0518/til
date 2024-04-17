@@ -1,5 +1,13 @@
 # venvで仮想環境を作成するには
 
+## Linux
+
+https://docs.python.org/ja/3/library/venv.html
+
+https://qiita.com/shun_sakamoto/items/7944d0ac4d30edf91fde
+
+https://qiita.com/hrmc/items/264857074b0c26dfeeaf
+
 Ubuntu では、先にパッケージのインストールが必要。
 
 ```bash
@@ -52,10 +60,21 @@ rm -rf venv
 
 https://github.com/github/gitignore/blob/main/Python.gitignore
 
-## 参考
-
-https://docs.python.org/ja/3/library/venv.html
-
-https://qiita.com/shun_sakamoto/items/7944d0ac4d30edf91fde
+## Windows
 
 https://qiita.com/hrmc/items/264857074b0c26dfeeaf
+
+Git Bash の例。
+
+```bash
+python -m venv venv
+```
+
+```bash
+. venv/Scripts/activate
+# (venv)
+```
+
+```bash
+deactivate
+```
