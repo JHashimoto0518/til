@@ -60,7 +60,7 @@ rm -rf venv
 
 https://github.com/github/gitignore/blob/main/Python.gitignore
 
-## Windows
+## Git Bash
 
 https://qiita.com/hrmc/items/264857074b0c26dfeeaf
 
@@ -76,5 +76,33 @@ python -m venv venv
 ```
 
 ```bash
+deactivate
+```
+
+## PowerShell
+
+スクリプトを実行可能にする。
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+```
+
+ターミナル起動時にスクリプトを実行可能にするには `setting.json` に以下を設定する。
+
+
+```json
+{
+    "terminal.integrated.env.windows": {
+        "PSExecutionPolicyPreference": "RemoteSigned"
+    }
+}
+```
+
+```powershell
+.\venv\Scripts\Activate.ps1
+# (venv) PS C:\xxx>
+```
+
+```powershell
 deactivate
 ```
