@@ -24,4 +24,10 @@ https://www.publickey1.jp/blog/22/webassemblypostgresqlwebpostgres_playgroundcru
 
 なお、WebContainer は、ブラウザ上で実現される Node.js 実行環境であり、コンテナ技術とは関係ない。
 
+Web版VSCodeでコンテナを動かす。
+
 https://www.publickey1.jp/blog/23/webwebassemblynodejswebcontainerapihttpnodejs_cli.html
+
+
+
+https://www.publickey1.jp/blog/24/webvscodedockerwasmwebvscode-container-wasm.html
