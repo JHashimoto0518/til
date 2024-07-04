@@ -1,0 +1,64 @@
+{
+  "pipeline": {
+    "name": "MyTestPipeline",
+    "roleArn": "arn:aws:iam::123456789012:role/CodePipeline_Service_Role",
+    "artifactStore": {
+      "type": "S3",
+      "location": "my-codepipeline-artifact-bucket"
+    },
+    "stages": [
+      {
+        "name": "Source",
+        "actions": [
+          {
+            "name": "SourceAction",
+            "actionTypeId": {
+              "category": "Source",
+              "owner": "AWS",
+              "provider": "CodeCommit",
+              "version": "1"
+            },
+            "configuration": {
+              "RepositoryName": "MyRepo",
+              "BranchName": "main"
+            },
+            "outputArtifacts": [
+              {
+                "name": "SourceOutput"
+              }
+            ],
+            "runOrder": 1
+          }
+        ]
+      },
+      {
+        "name": "Build",
+        "actions": [
+          {
+            "name": "BuildAction",
+            "actionTypeId": {
+              "category": "Build",
+              "owner": "AWS",
+              "provider": "CodeBuild",
+              "version": "1"
+            },
+            "configuration": {
+              "ProjectName": "MyBuildProject"
+            },
+            "inputArtifacts": [
+              {
+                "name": "SourceOutput"
+              }
+            ],
+            "outputArtifacts": [
+              {
+                "name": "BuildOutput"
+              }
+            ],
+            "runOrder": 1
+          }
+        ]
+      }
+    ]
+  }
+}
