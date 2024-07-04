@@ -1,0 +1,71 @@
+{
+    "pipeline": {
+        "name": "MyTestPipeline",
+        "roleArn": "arn:aws:iam::533267060632:role/role-for-codepipeline-creation-test",
+        "artifactStore": {
+            "type": "S3",
+            "location": "codepipelinestack-pipelineartifactsbucketaea9a052-g3dv9waxgcff"
+        },
+        "stages": [
+            {
+                "name": "Build",
+                "actions": [
+                    {
+                        "name": "BuildAction",
+                        "actionTypeId": {
+                            "category": "Build",
+                            "owner": "AWS",
+                            "provider": "CodeBuild",
+                            "version": "1"
+                        },
+                        "runOrder": 1,
+                        "configuration": {
+                            "ProjectName": "MyBuildProject"
+                        },
+                        "outputArtifacts": [
+                            {
+                                "name": "BuildOutput"
+                            }
+                        ],
+                        "inputArtifacts": [
+                            {
+                                "name": "SourceOutput"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Source",
+                "actions": [
+                    {
+                        "name": "SourceAction",
+                        "actionTypeId": {
+                            "category": "Source",
+                            "owner": "AWS",
+                            "provider": "CodeCommit",
+                            "version": "1"
+                        },
+                        "runOrder": 1,
+                        "configuration": {
+                            "BranchName": "main",
+                            "RepositoryName": "MySampleRepository"
+                        },
+                        "outputArtifacts": [
+                            {
+                                "name": "SourceOutput"
+                            }
+                        ],
+                        "inputArtifacts": []
+                    }
+                ]
+            }
+        ],
+        "version": 1
+    },
+    "metadata": {
+        "pipelineArn": "arn:aws:codepipeline:ap-northeast-1:533267060632:MyTestPipeline",
+        "created": "2024-07-04T10:23:20.319000+09:00",
+        "updated": "2024-07-04T10:23:20.319000+09:00"
+    }
+}

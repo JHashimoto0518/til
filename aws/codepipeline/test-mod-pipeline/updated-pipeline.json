@@ -1,0 +1,66 @@
+{
+    "pipeline": {
+        "name": "MyTestPipeline",
+        "roleArn": "arn:aws:iam::123456789012:role/CodePipeline_Service_Role",
+        "artifactStore": {
+            "type": "S3",
+            "location": "my-codepipeline-artifact-bucket"
+        },
+        "stages": [
+            {
+                "name": "Build",
+                "actions": [
+                    {
+                        "name": "BuildAction",
+                        "actionTypeId": {
+                            "category": "Build",
+                            "owner": "AWS",
+                            "provider": "CodeBuild",
+                            "version": "1"
+                        },
+                        "runOrder": 1,
+                        "configuration": {
+                            "ProjectName": "MyBuildProject"
+                        },
+                        "outputArtifacts": [
+                            {
+                                "name": "BuildOutput"
+                            }
+                        ],
+                        "inputArtifacts": [
+                            {
+                                "name": "SourceOutput"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Source",
+                "actions": [
+                    {
+                        "name": "SourceAction",
+                        "actionTypeId": {
+                            "category": "Source",
+                            "owner": "AWS",
+                            "provider": "CodeCommit",
+                            "version": "1"
+                        },
+                        "runOrder": 1,
+                        "configuration": {
+                            "BranchName": "main",
+                            "RepositoryName": "MyRepo"
+                        },
+                        "outputArtifacts": [
+                            {
+                                "name": "SourceOutput"
+                            }
+                        ],
+                        "inputArtifacts": []
+                    }
+                ]
+            }
+        ],
+        "version": 1
+    }
+}
