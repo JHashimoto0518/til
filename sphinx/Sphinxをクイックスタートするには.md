@@ -129,11 +129,11 @@ class TestClass:
 ## ドキュメントを生成する
 
 ```bash
-# -o: 出力先
-sphinx-apidoc -f -o ./docs/source ../
+# -o: 出力先, ./: main.py があるディレクトリ
+sphinx-apidoc -f -o ./docs/source ./
 ```
 
-modules.rst が作成される。
+modules.rst. main.rst が作成される。
 
 ```bash
 git status -u
@@ -142,11 +142,24 @@ git status -u
 
 ```bash
 cat docs/source/modules.rst 
-# jhashimoto0518
-# ==============
+# sphinx-autodoc-exercise
+# =======================
 
 # .. toctree::
 #    :maxdepth: 4
+
+#    main
+```
+
+```bash
+cat docs/source/main.rst 
+# main module
+# ===========
+
+# .. automodule:: main
+#    :members:
+#    :undoc-members:
+#    :show-inheritance:
 ```
 
 rst ファイルをビルドする。
