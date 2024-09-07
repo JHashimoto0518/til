@@ -4,7 +4,8 @@ bibliography:
   - https://qiita.com/futakuchi0117/items/4d3997c1ca1323259844
 repositoryUrl:
   - https://github.com/JHashimoto0518/sphinx-autodoc-exercise
-draft: true
+draft: false
+published: false
 ---
 
 # Sphinxをクイックスタートするには
@@ -139,6 +140,7 @@ modules.rst. main.rst が作成される。
 git status -u
 # ...
 #        docs/source/modules.rst
+```
 
 ```bash
 cat docs/source/modules.rst 
@@ -181,13 +183,15 @@ make html
 pip install myst-parser
 ```
 
+再度ビルドする。
+
 ```bash
 make html
-# /home/jhashimoto/rep/jhashimoto0518/sphinx-autodoc-exercise/docs/source/index.rst:14: WARNING: toctree contains reference to nonexisting document 'main' [toc.not_readable]
-# ...
-# checking consistency... /home/jhashimoto/rep/jhashimoto0518/sphinx-autodoc-exercise/docs/source/modules.rst: WARNING: document isn't included in any toctree
-# ...
 ```
+
+HTML ファイルが生成される。
+
+![alt text](images/image1.png)
 
 requiremets.txt を更新する。
 
@@ -214,7 +218,3 @@ git diff
 #  snowballstemmer==2.2.0
 #  Sphinx==8.0.2
 ```
-
-HTML に main モジュールの情報が出力されない。
-
-- [ ] index.rst の仕様を確認する。
