@@ -80,6 +80,15 @@ tree docs/
 
 ## conf.pyの編集
 
+読み込む Python ファイルのパスを追加する。
+
+```python
+import os
+import sys
+
+sys.path.insert(0, os.path.abspath("../../"))
+```
+
 extensions を編集する。
 
 ```python
