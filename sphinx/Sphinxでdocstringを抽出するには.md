@@ -1,6 +1,7 @@
 ---
 bibliography: 
   - http://ja.dochub.org/sphinx/index.html
+  - https://www.sphinx-doc.org/ja/master/
   - https://qiita.com/futakuchi0117/items/4d3997c1ca1323259844
 repositoryUrl:
   - https://github.com/JHashimoto0518/sphinx-autodoc-exercise
@@ -8,7 +9,7 @@ draft: false
 published: false
 ---
 
-# Sphinxをクイックスタートするには
+# Sphinxでdocstringを抽出するには
 
 ## 環境構築
 
@@ -89,18 +90,6 @@ extensions = [
 ]
 ```
 
-## index.rstの編集
-
-`index.rst` にトップページで追加したいモジュール (今回は `main` モジュール) を追加する。
-
-```rst
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   main
-```
-
 ## ドキュメントを抽出するPythonモジュールの作成
 
 docs ディレクトリと同じ階層に `main.py` を作成する。
@@ -163,6 +152,22 @@ cat docs/source/main.rst
 #    :undoc-members:
 #    :show-inheritance:
 ```
+
+## index.rstの編集
+
+`index.rst` にトップページに出力したいページ (今回は `modules.rst`) を追加する。
+
+```bash
+
+```rst
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   modules
+```
+
+## HTMLファイルの生成
 
 rst ファイルをビルドする。
 
