@@ -18,12 +18,11 @@ https://www.perplexity.ai/search/sphinxnoconf-pynoyi-xia-noji-s-TiJosf1mR3.LFp8.
 conf.py を編集する。
 
 ```bash
-# -extensions = ["sphinx.ext.autodoc", "sphinx.ext.napoleon", "myst_parser"]
+# -extensions = ["sphinx.ext.autodoc", "sphinx.ext.napoleon"]
 # +extensions = [
 # +    "sphinx.ext.autodoc",
 # +    "sphinx.ext.napoleon",
 # +    "sphinx.ext.autosummary",
-# +    "myst_parser",
 # +]
 # +
 # +autosummary_generate = True
