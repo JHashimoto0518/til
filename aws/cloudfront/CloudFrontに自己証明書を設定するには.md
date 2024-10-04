@@ -126,6 +126,8 @@ aws iam upload-server-certificate \
 Citations:
 [1] https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/cnames-and-https-requirements.html
 
+Perplexityの応答にしたがい再試行したが、エラーは変わらず。
+
 ```bash
 openssl genrsa -out private-key.pem 2048
 ```
@@ -170,6 +172,51 @@ aws iam upload-server-certificate \
 #         "Arn": "arn:aws:iam::533267060632:server-certificate/cloudfront/YourCertName",
 #         "UploadDate": "2024-10-03T23:56:51+00:00",
 #         "Expiration": "2025-10-03T23:56:11+00:00"
+#     }
+# }
+```
+
+カスタムドメイン名で再試行したが、エラーは変わらず。
+
+```bash
+openssl req -new -key private-key.pem -out csr.pem
+```
+
+```bash
+Country Name (2 letter code) [AU]:JP
+State or Province Name (full name) [Some-State]:TOKYO
+Locality Name (eg, city) []:
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:example company
+Organizational Unit Name (eg, section) []:
+Common Name (e.g. server FQDN or YOUR name) []:www.jhashimoto.net                            
+Email Address []:
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:
+```
+
+```bash
+openssl x509 -req -days 365 -in csr.pem -signkey private-key.pem -out certificate.pem
+# Certificate request self-signature ok
+# subject=C = JP, ST = TOKYO, O = example company, CN = www.jhashimoto.net
+```
+
+```bash
+aws iam upload-server-certificate \
+    --server-certificate-name ExampleCert \
+    --certificate-body file://certificate.pem \
+    --private-key file://private-key.pem \
+    --path /cloudfront/ \
+    --region us-east-1
+# {
+#     "ServerCertificateMetadata": {
+#         "Path": "/cloudfront/",
+#         "ServerCertificateName": "ExampleCert",
+#         "ServerCertificateId": "ASCAXYKJRS6MJGFRDYDAS",
+#         "Arn": "arn:aws:iam::533267060632:server-certificate/cloudfront/ExampleCert",
+#         "UploadDate": "2024-10-04T00:41:17+00:00",
+#         "Expiration": "2025-10-04T00:40:01+00:00"
 #     }
 # }
 ```
