@@ -220,3 +220,44 @@ aws iam upload-server-certificate \
 #     }
 # }
 ```
+
+## トラブルシューティング
+
+Perplexityより。
+
+このエラーメッセージは、CloudFrontで証明書を使用しようとする際によく発生します。問題を解決するために、以下の点を確認してください:
+
+1. 証明書の存在:
+   - IAMで証明書が正しくアップロードされているか確認してください。
+   - `aws iam list-server-certificates` コマンドを使用して、アップロードされた証明書のリストを確認できます。
+
+2. リージョン:
+   - CloudFrontで使用する証明書は、必ずus-east-1リージョンにアップロードする必要があります。
+   - 証明書をアップロードする際に、`--region us-east-1` オプションを使用してください。
+
+3. 証明書の有効性:
+   - 証明書の有効期限が切れていないか確認してください。
+   - `aws iam get-server-certificate --server-certificate-name YourCertificateName` コマンドで証明書の詳細を確認できます。
+
+4. 証明書チェーン:
+   - 自己署名証明書を使用している場合、証明書チェーンは不要です。
+   - 認証局（CA）発行の証明書を使用している場合、中間証明書を含む完全な証明書チェーンが必要です。
+
+5. アップロード時のパス:
+   - CloudFrontで使用する証明書は、`/cloudfront/` パスにアップロードする必要があります。
+   - アップロード時に `--path /cloudfront/` オプションを使用してください。
+
+6. 証明書とプライベートキーの形式:
+   - 両方がPEM形式であることを確認してください。
+   - プライベートキーが暗号化されていないことを確認してください。
+
+7. 権限:
+   - IAMユーザーに証明書の管理とCloudFrontの設定に必要な権限があることを確認してください。
+
+これらの点を確認し、必要に応じて証明書を再アップロードしてみてください。問題が解決しない場合は、AWS CLIを使用して証明書の詳細を取得し、エラーの具体的な原因を特定することができます。
+
+Citations:
+[1] https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html
+[2] https://supporthost.com/invalid-ssl-certificate/
+[3] https://docs.aws.amazon.com/cli/latest/reference/iam/list-server-certificates.html
+[4] https://docs.aws.amazon.com/cli/latest/reference/iam/get-server-certificate.html
