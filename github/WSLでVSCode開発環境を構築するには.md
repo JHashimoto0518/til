@@ -1,10 +1,12 @@
 ---
 bibliography: 
 repositoryUrl:
-draft: true
+draft: false
 ---
 
 # WSLでVS Code開発環境を構築するには
+
+https://learn.microsoft.com/ja-jp/windows/wsl/install
 
 WSLをインストールする。WSLとデフォルトのディストリビューションであるUbuntuがインストールされる。
 
